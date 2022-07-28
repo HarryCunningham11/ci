@@ -33,6 +33,9 @@ jobs:
       - name: Add package.json
         run: npm init -y
       
+      - name: Print
+        run: ls
+      
       - uses: actions/upload-artifact@main
         with:
           name: remark-lint-report
