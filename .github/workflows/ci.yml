@@ -34,3 +34,10 @@ jobs:
         with:
           name: remark-lint-report
           path: public/
+  PullArtifact:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/download-artifact@main
+        with:
+          name: remark-lint-report
