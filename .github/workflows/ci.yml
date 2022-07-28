@@ -39,7 +39,7 @@ jobs:
       - uses: actions/upload-artifact@main
         with:
           name: remark-lint-report
-          path: /package.json
+          path: package.json
           
   PullArtifact:
      runs-on: ubuntu-latest
