@@ -29,3 +29,22 @@ jobs:
         run: |
           npm install remark-cli remark-preset-lint-consistent
           npx remark . --use remark-preset-lint-consistent --frail
+          
+      - name: Add package.json
+        run: npm init -y
+      
+      - name: Print
+        run: ls
+      
+      - uses: actions/upload-artifact@main
+        with:
+          name: remark-lint-report
+          path: package.json
+          
+  PullArtifact:
+     runs-on: ubuntu-latest
+     needs: build
+     steps:
+      - uses: actions/download-artifact@main
+        with:
+          name: remark-lint-report
